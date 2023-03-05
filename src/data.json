@@ -1,0 +1,50 @@
+[
+{
+"id": 1,
+"name": "BTC",
+"price": "16,651.9",
+"symbol": "btc",
+"category": "Crypto",
+"change": "-8.12"
+},
+{
+"id": 2,
+"name": "ETH",
+"price": "16,651.9",
+"symbol": "eth",
+"category": "Crypto",
+"change": "-8.12"
+},
+{
+"id": 3,
+"name": "BNB",
+"price": "16,651.9",
+"symbol": "bnb",
+"category": "Crypto",
+"change": "-8.12"
+},
+{
+"id": 4,
+"name": "XRP",
+"price": "16,651.9",
+"symbol": "xrp",
+"category": "Crypto",
+"change": "-8.12"
+},
+{
+"id": 5,
+"name": "TRY",
+"price": "0,054",
+"symbol": "try",
+"category": "Currency",
+"change": "-8.12"
+},
+{
+"id": 6,
+"name": "USDT",
+"price": "16,651.9",
+"symbol": "usdt",
+"category": "Currency",
+"change": "-8.12"
+},
+]
