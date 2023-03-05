@@ -36,11 +36,12 @@ const screenOptions = (route, color) => {
       headerStyle: {
         backgroundColor: '#FFFFFF',
       },
+      headerTransparent: true,
       headerRightContainerStyle: {
-        marginRight: 20,
+        marginRight: 10,
       },
       headerTitle: '',
-      headerRight: () => (<TouchableOpacity><Image style={{marginRight: 20}} source={require('../../assets/png/find.png')}/></TouchableOpacity>),
+      headerRight: () => (<TouchableOpacity><Image style={{marginRight: 10, resizeMode: 'contain'}} source={require('../../assets/png/find.png')}/></TouchableOpacity>),
       headerTintColor: '#1A4184',
       drawerActiveBackgroundColor: '#eeeeee',
       drawerActiveTintColor: 'black',

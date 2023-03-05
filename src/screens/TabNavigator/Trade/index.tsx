@@ -1,24 +1,29 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, {  useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { SafeAreaView, Image, ScrollView, FlatList, StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import { Store } from '../../../utils/Store';
 import data from '../../../data';
+import { setMessage } from '../../../utils/message';
 
 const Trade = () => {
+  const dispatch = useDispatch();
+  const { basket } = useSelector((state: RootState) => state.message);
 
   const [filter, setFilter] = useState('All');
 
-  const buyItem = (data) => {
-
-    console.log(data)
+  const buyItem = (value) => {
+    console.log(value)
+    dispatch(setMessage(value));
+    console.log(basket);
+    
   }
 
-  const Item = ({ ProductName, ProductSymbol, ProductPrice, ProductChange, id }) => (
+  const Item = ({ ProductName, ProductSymbol, ProductCategory ,ProductPrice, ProductChange, id }) => (
     <ScrollView>
       <View>
         <View style={style.container}>
           <View style={style.area}>
             <Image
-              style={{ padding: 15, margin: 20 }}
+              style={{ padding: 15, margin: 20, resizeMode: 'contain' }}
               source={{ uri: ProductSymbol }} />
             <Text style={style.ProductTextName}>{ProductName}</Text>
 
@@ -33,6 +38,7 @@ const Trade = () => {
                 buyItem({
                   name: ProductName,
                   symbol: ProductSymbol,
+                  category: ProductCategory,
                   price: ProductPrice,
                   change: ProductChange,
                   id: id
@@ -47,11 +53,12 @@ const Trade = () => {
 
 
   const renderItem = ({ item }) => (         //FlatList Render Item
-    <Item key={item.id} ProductName={item.name} ProductSymbol={item.symbol} ProductPrice={item.price} ProductChange={item.change} id={item.id} />
+    <Item key={item.id} ProductName={item.name} ProductCategory={item.category} ProductSymbol={item.symbol} ProductPrice={item.price} ProductChange={item.change} id={item.id} />
   );
 
   return (
-    <SafeAreaView style={{ backgroundColor: '#FFFFFF', flex: 1 }}>
+    <SafeAreaView style={style.safeArea}>
+    <View style={style.home}>
       <View style={style.main}>
         <Text style={style.textMainLeft}>Oneriver</Text><Text style={style.textMainRight}>Trade</Text>
       </View>
@@ -67,19 +74,22 @@ const Trade = () => {
         renderItem={renderItem}
         keyExtractor={data => data.id}
       />
+    </View>
     </SafeAreaView>
   );
 
 }
 
 const style = StyleSheet.create({
+  safeArea: { backgroundColor: '#FFFFFF', flex: 1 },
+  home: {marginTop: 50},
   main: { flexDirection: 'row', marginLeft: 20, marginTop: 2 },
   textMainLeft: { color: '#1A4184', fontSize: 32, marginRight: 5, fontWeight: '400' },
   textMainRight: { color: '#1E1E1E', fontSize: 32, marginLeft: 5, fontWeight: '400' },
-  filter: { flexDirection: 'row', justifyContent: 'space-around', marginTop: 10 },
-  filterTouch: { backgroundColor: '#EBF3FF', paddingLeft: 15, paddingRight: 15, padding: 10, borderRadius: 10 },
-  ActiveText: { color: '#1A4184', fontSize: 15, fontWeight: '500' },
-  InavctiveText: { color: '#757575', fontSize: 15, fontWeight: '500' },
+  filter: { flexDirection: 'row' ,justifyContent: 'space-between',  marginTop: 10, marginBottom: 10 },
+  filterTouch: { backgroundColor: '#EBF3FF', paddingVertical: 8, flex: 1, marginHorizontal: 10 ,  justifyContent: 'center' ,borderRadius: 10 },
+  ActiveText: { color: '#1A4184', fontSize: 18, textAlign: 'center', fontWeight: '500' },
+  InavctiveText: { color: '#757575', fontSize: 18, textAlign: 'center',  fontWeight: '500' },
   area: { flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center' },
   container: { backgroundColor: '#E7E7E7', marginVertical: 10, marginHorizontal: 30, borderRadius: 10, },
   changeAndPrice: { flexDirection: 'column' },

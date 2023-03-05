@@ -1,13 +1,15 @@
 import * as React from 'react';
-import Route from './src/Route.js'
+import Route from './src/Route.tsx'
 
-import { StoreProvider } from './src/utils/Store.js'
+import { Provider } from 'react-redux';
+import { store } from './src/utils/Store';
+
 export default class App extends React.Component {
   render() {
     return (
-      <StoreProvider>
+      <Provider store={store}>
         <Route/>
-      </StoreProvider>
+      </Provider>
     )
   }
 }

@@ -88,7 +88,7 @@ export default Login;
 
 const style = StyleSheet.create({
   hero_description: { color: '#1A4184', fontSize: 24, marginTop: 10, fontWeight: '400' },
-  form: { flex: 1, marginTop: 10 },
+  form: { flex: 1, marginTop: 20 },
   placeholder: {marginBottom: 10 },
   OneriverLogo: {width: 192.5, height: 192, marginTop: '3%'},
   input: {
