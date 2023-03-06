@@ -1,9 +1,9 @@
-import React from 'react';
+//@ts-ignore 
 import TabStack from '../../TabNavigator/tabNavigator';
 
 const Trade = () => {
   return (
-    <TabStack></TabStack>
+    <TabStack></TabStack>  //redirect to Tab Navigation
   );
 }
 

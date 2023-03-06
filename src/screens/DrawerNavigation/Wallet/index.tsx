@@ -1,10 +1,8 @@
-import React from 'react';
-
 import TabStack from '../../TabNavigator/tabNavigator';
 
 const Wallet = () => {
   return (
-      <TabStack></TabStack>
+    <TabStack></TabStack>  //redirect to Tab Navigation
   );
 }
 

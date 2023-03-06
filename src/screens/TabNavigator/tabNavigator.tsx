@@ -1,14 +1,15 @@
-import * as React from 'react';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
 
+//@ts-ignore 
 import Trade from './Trade/index';
+//@ts-ignore 
 import Wallet from './Wallet/index';
 
 const Tab = createBottomTabNavigator();
 
-const screenOptions = (route, color) => {
+const screenOptions = (route, color: string) => {
     let IconName;
 
     switch (route.name) {
@@ -19,7 +20,6 @@ const screenOptions = (route, color) => {
         case "Wallet":
             IconName = "btc"
             break;
-
     }
     return (
         <FontAwesomeIcon name={IconName} size={30} color={color} />

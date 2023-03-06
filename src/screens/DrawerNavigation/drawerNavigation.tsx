@@ -1,26 +1,23 @@
-import * as React from 'react';
 import { Image, TouchableOpacity, StyleSheet } from "react-native";
-
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
 
+//@ts-ignore 
 import Trade from './Trade/index';
+//@ts-ignore 
 import Wallet from './Wallet/index';
-import TabStack from '../TabNavigator/tabNavigator';
 
-const Tab = createBottomTabNavigator();
 const Drawer = createDrawerNavigator();
 
-const screenOptions = (route, color) => {
+const screenOptions = (route, color) => {   //create to Drawer Navigation icon fabric pattern
   let IconName;
   switch (route.name) {
     case 'Trade':
-      IconName = "plus"
+      IconName = "home"
       break;
 
     case "Wallet":
-      IconName = "minus"
+      IconName = "btc"
       break;
 
   }
@@ -29,9 +26,8 @@ const screenOptions = (route, color) => {
   );
 }
 
- const DrawerStack = () => {
+const DrawerStack = () => {
   return (
-
     <Drawer.Navigator screenOptions={({ route }) => ({
       headerStyle: {
         backgroundColor: '#FFFFFF',
@@ -41,11 +37,11 @@ const screenOptions = (route, color) => {
         marginRight: 10,
       },
       headerTitle: '',
-      headerRight: () => (<TouchableOpacity><Image style={{marginRight: 10, resizeMode: 'contain'}} source={require('../../assets/png/find.png')}/></TouchableOpacity>),
+      headerRight: () => (<TouchableOpacity><Image style={{ marginRight: 10, resizeMode: 'contain' }} source={require('../../assets/png/find.png')} /></TouchableOpacity>),
       headerTintColor: '#1A4184',
-      drawerActiveBackgroundColor: '#eeeeee',
-      drawerActiveTintColor: 'black',
-      drawerInActiveTintColor: 'white',
+      drawerActiveBackgroundColor: '#1A4184',
+      drawerActiveTintColor: '#FFFFFF',
+      drawerInActiveTintColor: '#FFFFFF',
       drawerType: 'front',
       drawerStyle: [
         {
@@ -56,12 +52,10 @@ const screenOptions = (route, color) => {
       drawerIcon: ({ color }) =>
         screenOptions(route, color),
     })} initialRouteName='Trade'>
-      <Drawer.Screen name="home" component={Trade} />
-      <Drawer.Screen name="page" component={Wallet} />
+      <Drawer.Screen name="Trade" component={Trade} />
+      <Drawer.Screen name="Wallet" component={Wallet} />
     </Drawer.Navigator>
   );
 }
 
-const style = StyleSheet.create({
-})
 export default DrawerStack
