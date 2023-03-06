@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "683013771385",
+    "project_id": "oneriver-f15e2",
+    "storage_bucket": "oneriver-f15e2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:683013771385:android:622be395326e557dc904a8",
+        "android_client_info": {
+          "package_name": "com.oneriver"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "683013771385-i42is1p407rul7engstoth3m8s7gjvpg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAf6ybRfgRXg4pLpxoKrH5hQgcIBbbqF78"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "683013771385-i42is1p407rul7engstoth3m8s7gjvpg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
