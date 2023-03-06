@@ -1,7 +1,7 @@
 //@ts-ignore 
 import { createSlice } from "@reduxjs/toolkit"
 //@ts-ignore 
-import data from '../../../data.json'
+import data from '../../data.json'
 
 
 const messageSlice = createSlice({
