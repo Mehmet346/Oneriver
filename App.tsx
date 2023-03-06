@@ -1,7 +1,7 @@
 import * as React from 'react';
-import Route from './src/router/Route.js'
+import Route from './src/router/Route'
 import { Provider } from 'react-redux';
-import { store } from './src/utils/store/Store.js';
+import { store } from './src/utils/store/Store';
 
 const App = () => {
   return (
