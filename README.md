@@ -1,7 +1,7 @@
 # Oneriver
 
 ![Screenshot_1678106327](https://user-images.githubusercontent.com/77240685/223113798-b973700e-0b84-4f40-8e02-ad3766b47adf.png)
-![resize-16781066181564912970Screenshot1678106327](https://user-images.githubusercontent.com/77240685/223113805-683e284c-7fb4-4416-bad5-9fb4b7878407.png)
+![Screenshot_1678107503](https://user-images.githubusercontent.com/77240685/223116868-a1bc4ebd-451c-4d74-98eb-9614a8a52e79.png)
 
 
 # Getting Started with Create React App
