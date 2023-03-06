@@ -1,5 +1,7 @@
+//@ts-ignore 
 import { configureStore } from '@reduxjs/toolkit';
-import messageReducer from './message';
+//@ts-ignore 
+import messageReducer from './store/message';
 
 export const store = configureStore({
   reducer: {

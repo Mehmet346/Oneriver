@@ -1,8 +1,7 @@
-import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 
-import AuthStack from './screens/Auth/authNavigator';
-import DrawerStack from './screens/DrawerNavigation/drawerNavigation';
+import AuthStack from '../screens/Auth/authNavigator';
+import DrawerStack from '../screens/DrawerNavigation/drawerNavigation';
 
 const isLogged = (1);
 
