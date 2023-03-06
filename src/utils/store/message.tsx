@@ -9,6 +9,7 @@ const messageSlice = createSlice({
   initialState: {
     basket: data,
     debt_state: [],
+    isLogged: false
   },
   reducers: {
     setMessage(state, action) {
@@ -20,9 +21,15 @@ const messageSlice = createSlice({
       } else {
         existItem.quantity += 1;         // else increase the number if any
       }
+    },
+    setLogged(state, action) {
+      let Logged = state.isLogged;
+      if(!Logged) {
+        state.isLogged = true;
+      }
     }
   }
 })
 
-export const { setMessage } = messageSlice.actions
+export const { setMessage, setLogged } = messageSlice.actions
 export default messageSlice.reducer

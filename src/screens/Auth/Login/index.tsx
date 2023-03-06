@@ -1,6 +1,9 @@
 import { useState } from 'react';
+import { useDispatch ,useSelector } from 'react-redux';
 import { View, SafeAreaView, Image, Text, TouchableOpacity } from 'react-native';
+import auth from '@react-native-firebase/auth';
 import Icon from "react-native-vector-icons/FontAwesome5";
+import { setLogged } from '../../../utils/store/message';
 //@ts-ignore 
 import { style } from "./style";
 //@ts-ignore  
@@ -9,13 +12,29 @@ import { TextInput } from 'react-native-gesture-handler';
 import { Formik } from 'formik';
 import * as yup from 'yup';
 
-
 const Login = () => {
   const [hidePassword, sethidePassword] = useState(true);
+  const dispatch = useDispatch();
 
 
   const _handleSubmit = async (values: types<value>) => {
-    console.log(values)
+    auth()
+  .signInWithEmailAndPassword(values.email, values.password)
+  .then(() => {
+    console.log('User account created & signed in!');
+    dispatch(setLogged(true));
+  })
+  .catch(error => {
+    if (error.code === 'auth/email-already-in-use') {
+      console.log('That email address is already in use!');
+    }
+
+    if (error.code === 'auth/invalid-email') {
+      console.log('That email address is invalid!');
+    }
+
+    console.error(error);
+  });
   }
 
   return (
