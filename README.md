@@ -1,7 +1,10 @@
 # Oneriver
 
-![Screenshot_1678106327](https://user-images.githubusercontent.com/77240685/223113798-b973700e-0b84-4f40-8e02-ad3766b47adf.png)
-![Screenshot_1678107503](https://user-images.githubusercontent.com/77240685/223116868-a1bc4ebd-451c-4d74-98eb-9614a8a52e79.png)
+![Screenshot_1678217619](https://user-images.githubusercontent.com/77240685/223533155-db6de265-4ed8-4da7-bfc1-bd5dbdc27b01.png)
+![Screenshot_![Screenshot_1678217627](https://user-images.githubusercontent.com/77240685/223533194-da82df7b-55be-45ae-a32e-57335862c0c2.png)
+![Screenshot_1678217627](https://user-images.githubusercontent.com/77240685/223533233-0a79538f-bc7f-473b-b3a4-6c2ff8d29e07.png)
+
+
 
 
 # Getting Started with Create React App
