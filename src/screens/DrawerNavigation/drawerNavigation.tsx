@@ -26,14 +26,10 @@ const CustomDrawerContent = (props) => {
       />
       <DrawerItem
         label="Transaction"
-        style={{display: "flex"}}
         onPress={() => {navigation.navigate('Transaction')}}
         icon={({focused, color, size}) => (
           <FontAwesomeIcon name={'history'} color={"#1A4184"} size={20}/>
         )}
-        activeTintColor="#1A4184"
-        inactiveTintColor="#FFFFF"
-        activeBackgroundColor="#1A4184"
       />
       <DrawerItem
         label="Wallet"
