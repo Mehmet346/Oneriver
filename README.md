@@ -1,7 +1,7 @@
 # Oneriver
 
 ![Screenshot_1678217619](https://user-images.githubusercontent.com/77240685/223533155-db6de265-4ed8-4da7-bfc1-bd5dbdc27b01.png)
-![Screenshot_![Screenshot_1678217627](https://user-images.githubusercontent.com/77240685/223533194-da82df7b-55be-45ae-a32e-57335862c0c2.png)
+![Screenshot_1678217624](https://user-images.githubusercontent.com/77240685/223533344-9e31091f-e2db-42a7-94bb-e085dbdb60b9.png)
 ![Screenshot_1678217627](https://user-images.githubusercontent.com/77240685/223533233-0a79538f-bc7f-473b-b3a4-6c2ff8d29e07.png)
 
 
