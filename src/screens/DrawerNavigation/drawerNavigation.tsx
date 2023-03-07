@@ -1,11 +1,14 @@
 import { Image, TouchableOpacity, StyleSheet } from "react-native";
-import { createDrawerNavigator } from '@react-navigation/drawer';
+import { DrawerItem, DrawerContentScrollView, createDrawerNavigator } from '@react-navigation/drawer';
 import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
+import { useNavigation } from '@react-navigation/native';
+
 
 //@ts-ignore 
-import Trade from './Trade/index';
+import Trade from '../TabNavigator/Trade/index';
 //@ts-ignore 
-import Wallet from './Wallet/index';
+import Wallet from '../TabNavigator/Wallet/index';
+import TabStack from "../TabNavigator/tabNavigator";
 
 const Drawer = createDrawerNavigator();
 
@@ -26,9 +29,30 @@ const screenOptions = (route, color) => {   //create to Drawer Navigation icon f
   );
 }
 
+
+const CustomDrawerContent = (props) => {
+  const navigation = useNavigation();
+  return (
+    <DrawerContentScrollView {...props}>
+          <DrawerItem
+        label="Trade"
+        onPress={() => {navigation.navigate('Trade')}}
+      />
+          <DrawerItem
+        label="Wallet"
+        onPress={() => {navigation.navigate('Wallet')}}
+      />
+    </DrawerContentScrollView>
+  );
+}
+  
+
+
 const DrawerStack = () => {
   return (
-    <Drawer.Navigator screenOptions={({ route }) => ({
+    <Drawer.Navigator
+    drawerContent={(props) => <CustomDrawerContent {...props} />}
+    screenOptions={({ route }) => ({
       headerStyle: {
         backgroundColor: '#FFFFFF',
       },
@@ -51,9 +75,9 @@ const DrawerStack = () => {
       ],
       drawerIcon: ({ color }) =>
         screenOptions(route, color),
-    })} initialRouteName='Trade'>
-      <Drawer.Screen name="Trade" component={Trade} />
-      <Drawer.Screen name="Wallet" component={Wallet} />
+    })}>
+     
+      <Drawer.Screen name="Wallet" component={TabStack} />
     </Drawer.Navigator>
   );
 }

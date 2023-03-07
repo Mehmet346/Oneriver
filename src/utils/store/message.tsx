@@ -21,6 +21,10 @@ const messageSlice = createSlice({
       } else {
         existItem.quantity += 1;         // else increase the number if any
       }
+      let logRecord = state.debt_state;
+      logRecord.push({ ...action.payload, buy: 1 });
+      state.debt_state = logRecord;
+      console.log(state.debt_state);
     },
     setLogged(state, action) {
       let Logged = state.isLogged;
