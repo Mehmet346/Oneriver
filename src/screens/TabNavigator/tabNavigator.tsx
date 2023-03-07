@@ -6,6 +6,8 @@ import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
 import Trade from './Trade/index';
 //@ts-ignore 
 import Wallet from './Wallet/index';
+//@ts-ignore 
+import Transaction from './Transaction';
 
 const Tab = createBottomTabNavigator();
 
@@ -19,6 +21,10 @@ const screenOptions = (route, color: string) => {
 
         case "Wallet":
             IconName = "btc"
+            break;
+        
+        case "Transaction":
+            IconName = "history"
             break;
     }
     return (
@@ -44,6 +50,7 @@ const TabStack = () => {
                 screenOptions(route, color),
         })}>
             <Tab.Screen name="Trade" component={Trade} />
+            <Tab.Screen name="Transaction" component={Transaction} />
             <Tab.Screen name="Wallet" component={Wallet} />
         </Tab.Navigator>
     )

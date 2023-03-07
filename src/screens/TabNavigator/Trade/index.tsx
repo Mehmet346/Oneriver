@@ -4,7 +4,7 @@ import { SafeAreaView, Image, ScrollView, FlatList, Text, TouchableOpacity, View
 //@ts-ignore 
 import data from '../../../data';
 //@ts-ignore 
-import { setMessage } from '../../../utils/store/message';
+import { setMessage, sell } from '../../../utils/store/message';
 //@ts-ignore 
 import { style } from './style'
 //@ts-ignore 
@@ -18,10 +18,11 @@ const Trade = () => {
   const [filter, setFilter] = useState('All');
 
   const buyItem = (value: types<value>) => {
-    console.log(value)
     dispatch(setMessage(value));
-    console.log(basket);
+  }
 
+  const sellItem = (value: types<value>) => {
+    dispatch(sell(value));
   }
 
   const Item = ({ ProductName, ProductSymbol, ProductCategory, ProductPrice, ProductChange, id }) => (
@@ -40,6 +41,7 @@ const Trade = () => {
             </View>
 
 
+            <View style={style.buttonContainer}>
             <TouchableOpacity style={style.buyButton}
               onPress={() => {
                 buyItem({
@@ -48,10 +50,27 @@ const Trade = () => {
                   category: ProductCategory,
                   price: ProductPrice,
                   change: ProductChange,
-                  id: id
+                  id: id,
+                  date: new Date().toLocaleString()
                 })
               }}
             ><Text style={style.buyTextButton}>Buy</Text></TouchableOpacity>
+
+            <TouchableOpacity style={style.sellButton}
+              onPress={() => {
+                sellItem({
+                  name: ProductName,
+                  symbol: ProductSymbol,
+                  category: ProductCategory,
+                  price: ProductPrice,
+                  change: ProductChange,
+                  id: id,
+                  date: new Date().toLocaleString()
+                })
+              }}
+            ><Text style={style.sellTextButton}>Sell</Text></TouchableOpacity>
+            </View>
+
           </View>
         </View>
       </View>
